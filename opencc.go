@@ -10,7 +10,6 @@ import (
 	"path"
 	"path/filepath"
 	"reflect"
-	"runtime"
 	"strings"
 
 	"github.com/liuzl/da"
@@ -24,7 +23,8 @@ var (
 )
 
 func defaultDir() string {
-	return path.Join(os.Getwd(),`data`)
+	wd,_ := os.Getwd()
+	return path.Join(wd,`data`)
 	/*
 	if runtime.GOOS == "windows" {
 		return `C:\gocc\`
