@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"path"
 	"path/filepath"
 	"reflect"
 	"runtime"
@@ -23,6 +24,8 @@ var (
 )
 
 func defaultDir() string {
+	return path.Join(os.Getwd(),`data`)
+	/*
 	if runtime.GOOS == "windows" {
 		return `C:\gocc\`
 	}
@@ -31,6 +34,7 @@ func defaultDir() string {
 	} else {
 		return `/usr/local/share/gocc/`
 	}
+	*/
 }
 
 // Group holds a sequence of dicts
